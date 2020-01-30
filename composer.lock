@@ -4,8 +4,180 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94d4bf9ac7f4a933030e46a346ee2917",
+    "content-hash": "d143b42311223c45b55b84c1bd761ecf",
     "packages": [
+        {
+            "name": "anam/lara-phpcart",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anam-hossain/lara-phpcart.git",
+                "reference": "0e5e99eb37a4bbf37a6361ea99fe50ae026721fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anam-hossain/lara-phpcart/zipball/0e5e99eb37a4bbf37a6361ea99fe50ae026721fd",
+                "reference": "0e5e99eb37a4bbf37a6361ea99fe50ae026721fd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Anam\\Phpcart\\CartServiceProvider"
+                    ],
+                    "aliases": {
+                        "Cart": "Anam\\Phpcart\\Facades\\Cart"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Anam\\Phpcart\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anam hossain",
+                    "email": "enam33@gmail.com"
+                }
+            ],
+            "description": "Laravel php shopping cart",
+            "homepage": "https://github.com/anam-hossain/lara-phpcart",
+            "keywords": [
+                "Laravel cart",
+                "Laravel php cart",
+                "Laravel shopping cart",
+                "cart",
+                "shopping cart"
+            ],
+            "time": "2019-02-26T01:00:49+00:00"
+        },
+        {
+            "name": "anam/phpcart",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anam-hossain/phpcart.git",
+                "reference": "aac345aa0e9b4ff3537ed25362693d0c4a0612aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anam-hossain/phpcart/zipball/aac345aa0e9b4ff3537ed25362693d0c4a0612aa",
+                "reference": "aac345aa0e9b4ff3537ed25362693d0c4a0612aa",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0",
+                "symfony/http-foundation": "~3.0|~4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Anam\\Phpcart\\CartServiceProvider"
+                    ],
+                    "aliases": {
+                        "Cart": "Anam\\Phpcart\\Facades\\Cart"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Anam\\Phpcart\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anam hossain",
+                    "email": "enam33@gmail.com"
+                }
+            ],
+            "description": "Simple framework agnostic shopping cart",
+            "homepage": "https://github.com/anam-hossain/phpcart",
+            "keywords": [
+                "Laravel cart",
+                "Laravel shopping cart",
+                "cart",
+                "php cart",
+                "shopping cart"
+            ],
+            "time": "2019-02-25T10:40:30+00:00"
+        },
+        {
+            "name": "darryldecode/cart",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/darryldecode/laravelshoppingcart.git",
+                "reference": "966e8e584ba078a2ffe644f42a090a3e7e59d37a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/darryldecode/laravelshoppingcart/zipball/966e8e584ba078a2ffe644f42a090a3e7e59d37a",
+                "reference": "966e8e584ba078a2ffe644f42a090a3e7e59d37a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6.0",
+                "illuminate/translation": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6.0",
+                "illuminate/validation": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*|^6.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^8.0.0",
+                "symfony/var-dumper": "2.7.*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Darryldecode\\Cart\\CartServiceProvider"
+                    ],
+                    "aliases": {
+                        "Cart": "Darryldecode\\Cart\\Facades\\CartFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Darryldecode\\": "src/Darryldecode"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Darryl Fernandez",
+                    "email": "engrdarrylfernandez@gmail.com"
+                }
+            ],
+            "description": "Laravel 5 Shopping cart",
+            "keywords": [
+                "cart",
+                "laravel",
+                "shopping cart"
+            ],
+            "time": "2020-01-08T14:38:51+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "v0.1.1",

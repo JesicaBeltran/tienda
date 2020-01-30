@@ -1,1 +1,7 @@
-<p>inicio sesion</p>
+@include('layout')
+
+        @yield('menu')
+
+        @section('sesion')
+        <p>inicio sesion</p>
+        @endsection
