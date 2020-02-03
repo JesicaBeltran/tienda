@@ -1,10 +1,6 @@
 
-      
-<div class="container-fluid">
-<div class="row">
-  <div class="col-12">
         
-    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color:#ffe6b3;">
         <img id="logo" src="http://localhost/mi-proyecto-laravel/tienda/public/imagenes/logo.png" class="d-inline-block align-top" width="120" height="70">
     <a class="navbar-brand" href="{{url('/')}}">Inicio</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +34,4 @@
   </nav>
   <div>
 
-</div>
-</div>
 

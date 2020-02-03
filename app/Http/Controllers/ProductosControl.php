@@ -11,19 +11,27 @@ class ProductosControl extends Controller
     public function show () {
         $categorias= Categorias::get();
 
-       $datos = Productos::where('destacado', '=', '1')->get();
+       $productos = Productos::where('destacado', '=', '1')->get();
 
-        return view("tablaProductos", ["datos" => $datos,"categorias" => $categorias]);
+        return view("tablaProductos", ["productos" => $productos,"categorias" => $categorias]);
         
     }
     public function showCategoria ($categoria) {
 
         $categorias= Categorias::get();
 
-        $datos = Productos::where('categorias_id',$categoria)->get();
+        $productos = Productos::where('categorias_id',$categoria)->get();
  
-        return view("categorias", ["datos" => $datos, "categorias" => $categorias]);
+        return view("tablaProductos", ["productos" => $productos, "categorias" => $categorias]);
          
      }
+     public function showProducto ($idProducto) {
+
+        $categorias= Categorias::get();
+        $productos = Productos::where('id',$idProducto)->get();
+
+        return view("articulo", ["productos" => $productos, "categorias" => $categorias]);
+        
+    }
 
 }
