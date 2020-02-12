@@ -23,10 +23,10 @@
         </ul>
         <div class="form-inline md-form mt-0">
         <input class="form-control mr-sm-2" type="text"  placeholder="Search" aria-label="Search">
-        <input type="button" class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Buscar">
+        <input type="button" class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Buscar">&nbsp&nbsp
         </div>
         <div>
-        <img id="logo" src="http://localhost/mi-proyecto-laravel/tienda/public/imagenes/carrito.png" class="d-inline-block align-top" width="35" height="35">
+        <a href="{{ url('/verCarrito') }}"><img id="logo" src="http://localhost/mi-proyecto-laravel/tienda/public/imagenes/carrito.png" class="d-inline-block align-top" width="35" height="35"></a>
         <a href="{{ url('/inicioSesion') }}"><img id="user" src="http://localhost/mi-proyecto-laravel/tienda/public/imagenes/usuario.png" class="d-inline-block align-top" width="35" height="35"></a>
         </div>
     

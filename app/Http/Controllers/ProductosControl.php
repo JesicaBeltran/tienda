@@ -9,7 +9,7 @@ use App\Categorias;
 class ProductosControl extends Controller
 {
     public function show () {
-        $categorias= Categorias::get();
+       $categorias= Categorias::get();
 
        $productos = Productos::where('destacado', '=', '1')->get();
 
