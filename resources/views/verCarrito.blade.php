@@ -50,6 +50,16 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Productos: {{ Cart::getContent()->count()}}</li>
     <li class="list-group-item">Precio Total: {{Cart::getTotal()}} €</li>
+   @if (Cart::getContent()->count()>0)
+   
+   @if(Auth::guest())
+    
+    <a href="{{ url('/home') }}">Realizar pedido(falta login)</a>
+  @else
+  <a href="{{ url('/pedidoForm') }}">Realizar pedido(logueado)</a>
+  @endif
+  @endif
+   
   </ul>
 </div>
 @endsection

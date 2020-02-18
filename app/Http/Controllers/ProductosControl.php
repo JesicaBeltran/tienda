@@ -33,5 +33,10 @@ class ProductosControl extends Controller
         return view("articulo", ["productos" => $productos, "categorias" => $categorias]);
         
     }
+    public function formPedido(){
+        $categorias= Categorias::get();
+        return view("pedido_form",["categorias" => $categorias]);
+    }
+    
 
 }

@@ -1,5 +1,3 @@
-
-        
     <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color:#ffe6b3;">
         <img id="logo" src="http://localhost/mi-proyecto-laravel/tienda/public/imagenes/logo.png" class="d-inline-block align-top" width="120" height="70">
     <a class="navbar-brand" href="{{url('/')}}">Inicio</a>
@@ -27,7 +25,18 @@
         </div>
         <div>
         <a href="{{ url('/verCarrito') }}"><img id="logo" src="http://localhost/mi-proyecto-laravel/tienda/public/imagenes/carrito.png" class="d-inline-block align-top" width="35" height="35"></a>
-        <a href="{{ url('/inicioSesion') }}"><img id="user" src="http://localhost/mi-proyecto-laravel/tienda/public/imagenes/usuario.png" class="d-inline-block align-top" width="35" height="35"></a>
+        @guest
+        <a href="{{ url('/home') }}"><img id="user" src="http://localhost/mi-proyecto-laravel/tienda/public/imagenes/usuario.png" class="d-inline-block align-top" width="35" height="35"></a>
+        @else
+        <a href="{{ route ('logout') }}"
+            onclick="event.preventDefault();
+            document.getElementById('logout-form').submit()";>
+            Cerrar sesion 
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:none;">
+            {{csrf_field()}}        
+            </form>
+        @endguest
         </div>
     
       </div>
