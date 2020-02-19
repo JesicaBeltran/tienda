@@ -7,15 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class Pedidos extends Model
 {
     protected $table = 'pedido';
-    /*protected $fillable= [
-        'fecha',
+    protected $fillable= [
+        'id',
+        'fecha_realizacion',
         'codigo',
         'estado',
         'direccion',
-        'id',
+        
         'nombre_usuario',
         'correo_electronico',
         'dni',
-        'users_id'
-    ];*/
+        'users_id',
+        'updated_at',
+    ];
 }

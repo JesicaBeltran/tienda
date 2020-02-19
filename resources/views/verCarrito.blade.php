@@ -13,6 +13,7 @@
     <th scope="col align-self-center">Nombre</th>
     <th scope="col text-center">Precio</th>
     <th scope="col text-center">Cantidad</th>
+    <th scope="col text-center">Descuento</th>
     <th></th>
 </tr>
 </thead>
@@ -22,6 +23,7 @@
         <td scope="row text-center"><img style ="with:80px;height:80px;" src="{{ $productos->attributes->imagen }}"></img></td>
         <td scope="row text-center">{{ $productos->name }}</td>
         <td scope="row text-center" >{{ $productos->price }} €</td>
+        
         <td>
           <form method="POST" action="{{ url('/actualizar') }}">
             <input type="hidden" name="_token" value="{{csrf_token()}}" />
@@ -34,6 +36,7 @@
         <form method="POST" action="{{ route('cart.remove', $productos->id) }}">
             <input type="hidden" name="_token" value="{{csrf_token()}}" />
             <input type="image" name="borrar" style ="with:40px;height:40px;" src="imagenes/eliminar.png"></img>
+            <td scope="row text-center" >{{ $productos->attributes->descuento }} %</td>
         </form>
     </td>
       

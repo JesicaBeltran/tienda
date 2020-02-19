@@ -58,7 +58,8 @@ public function cart(){
          'price' => $detalles->precio,
          'quantity' => $res->cantidad,
          'attributes' => array(
-            'imagen' => $detalles->imagen_producto
+            'imagen' => $detalles->imagen_producto,
+            'descuento' =>$detalles->descuento_aplicable,
          )
      ));
     
