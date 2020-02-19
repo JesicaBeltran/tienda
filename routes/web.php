@@ -29,4 +29,5 @@ Route::get('password\reset\{token}','Auth\ResetPasswordController@showResetForm'
 Route::post('password\reset','Auth\ResetPasswordController@reset');*/
 Route::get('/pedidoForm', 'ProductosControl@formPedido')->name('pedido.form');
 Route::post('/crearPedido', 'PedidosControl@crearPedido')->name('pedido.crear');
+Route::post('/enviarEmail', 'PedidosControl@enviarEmail')->name('email.enviar');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
