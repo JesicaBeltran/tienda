@@ -12,9 +12,10 @@ class carritoControl extends Controller
 {
 
 public function cart(){
+   $total=Cart::getTotalQuantity();
    $categorias= Categorias::get();
       $contenido=Cart::getContent();
-      return view('verCarrito', ['contenido' => $contenido,'categorias' => $categorias]);
+      return view('verCarrito', ['contenido' => $contenido,'categorias' => $categorias,'total'=>$total]);
 
 }
 
@@ -49,7 +50,7 @@ public function cart(){
 
    public function cartAdd(Request $res){
       //buscar datos del producto a añadir
-      
+      $total=Cart::getTotalQuantity();
       $detalles = Productos::find($res->id);
 
       Cart::add(array(
@@ -65,7 +66,7 @@ public function cart(){
     
       $categorias= Categorias::get();
       $contenido=Cart::getContent();
-      return view('verCarrito', ['contenido' => $contenido, 'categorias'=>$categorias]);
+      return view('verCarrito', ['contenido' => $contenido, 'categorias'=>$categorias,'total'=>$total]);
     
    }
    public function borrar($id){

@@ -1,7 +1,7 @@
 @extends('inicio')
 @section('content')
 
-<div class="row">
+<div class="row align-items-center" style="margin-top:40px;">
 
 @foreach($productos as $producto)
 
@@ -14,7 +14,7 @@
         <div class="card-block px-3">
                 <h4 class="card-title">{{ $producto->nombre_producto }}</h4>
                 <p class="card-text">{{ $producto->descripcion }}</p>
-                <p class="card-text">{{ $producto->precio }} €</p>
+                <p class="card-text" style="font-weight:bold;">{{ $producto->precio }} €</p>
 
                @if ($producto->stock== '0')
                 <p class="card-text">No está en stock.</p>
@@ -23,7 +23,7 @@
                 
                 <input type="number" name="cantidad" value="1" min="1" max="{{ $producto->stock }}"/>
 
-                <input type="submit" value="Añadir al carrito" />
+                <input type="submit" class="btn" style="background-color:#f1935c;color:white;margin-left:10px;" value="Añadir al carrito" />
                 @endif
         </div>
         <input type="hidden" name="id" value="{{ $producto->id }}" />

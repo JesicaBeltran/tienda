@@ -4,7 +4,6 @@ Route::get('/','ProductosControl@show', function(){
     return view('inicio');
 });
 Route::get('/tablaProductosCategoria/{categoria}','ProductosControl@showCategoria');
-
 Route::get('/articulo/{idProducto}','ProductosControl@showProducto');
 Route::get('/verCarrito','carritoControl@cart');
 Route::post('/verCarrito','carritoControl@cartAdd');
@@ -31,3 +30,10 @@ Route::get('/pedidoForm', 'ProductosControl@formPedido')->name('pedido.form');
 Route::post('/crearPedido', 'PedidosControl@crearPedido')->name('pedido.crear');
 Route::post('/enviarEmail', 'PedidosControl@enviarEmail')->name('email.enviar');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+
+Route::get('/verPerfil', 'perfilControl@verPerfil');
+Route::get('/modificarForm', 'usuarioControl@mostrarForm');
+Route::post('/modificarUsuario', 'usuarioControl@modificar');
+Route::post('/darBaja', 'usuarioControl@baja');
+Route::post('/cambiarC', 'usuarioControl@actualizarC');
+Route::get('/cambioContras', 'usuarioControl@mostrarCambioContra');

@@ -1,9 +1,7 @@
 @extends('inicio')
 @section('content')
-
-<h1>resumen pedido (prueba de email)</h1>
-<form method="POST" action="{{ url('/') }}">
-<input type="hidden" name="_token" value="{{csrf_token()}}" />
-<button type="submit" class="btn btn-primary">aceptar y recibir correo</button>
-</form>
+<div style="margin-top:50px;">
+<h4>¡Su pedido se ha realizado correctamente!</h4>
+<h6>Se ha enviado el resumen de su pedido a su e-mail {{auth()->user()->email}}</h6>
+</div>
 @endsection

@@ -2,17 +2,15 @@
 @section('content')
 
 <div class="row">
-
-
 <div class="col-lg-8">
-<h3>Carrito</h3>
 <table class="table text-center">
-<thead class="thead-light">
+<thead class="thead" style="background-color:#30475e; color:white;">
 <tr>
 <th></th>
     <th scope="col align-self-center">Nombre</th>
     <th scope="col text-center">Precio</th>
     <th scope="col text-center">Cantidad</th>
+    <th scope="col text-center"></th>
     <th scope="col text-center">Descuento</th>
     <th></th>
 </tr>
@@ -47,22 +45,23 @@
 </div>
 <div class="col-lg-3 mt-4">
 <div class="card" style="width: 18rem;">
-  <div class="card-header">
+  <div class="card-header" style="background-color:#30475e;color:white;">
     Información
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Productos: {{ Cart::getContent()->count()}}</li>
+    <li class="list-group-item">Productos: {{$total}}</li>
     <li class="list-group-item">Precio Total: {{Cart::getTotal()}} €</li>
+    </ul>
    @if (Cart::getContent()->count()>0)
    
    @if(Auth::guest())
     
-    <a href="{{ url('/home') }}">Realizar pedido(falta login)</a>
+  <a href="{{ url('/home') }}" class="btn mt-2" style="background-color:#f1935c; color:white;">Realizar pedido</a>
   @else
-  <a href="{{ url('/pedidoForm') }}">Realizar pedido(logueado)</a>
+  <a href="{{ url('/pedidoForm') }}" class="btn mt-2" style="background-color:#f1935c; color:white;">Realizar pedido</a>
   @endif
   @endif
    
-  </ul>
+ 
 </div>
 @endsection

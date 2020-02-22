@@ -8,6 +8,7 @@ use Cart;
 use App\Categorias;
 use Mail;
 use App\productosPedidos;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class PedidosControl extends Controller
 {
@@ -18,14 +19,17 @@ class PedidosControl extends Controller
         //return view('/home');
         $pedido=Pedidos::create(['fecha_realizacion' => $fecha, 'codigo'=>$res->codigo_user,'estado'=>"1",'direccion'=>$res->direccion,'nombre_usuario'=>$res->name_user,'correo_electronico'=>$res->email_user,'dni'=>$res->dni,'users_id'=>$res->id_user]);
         $categorias= Categorias::get();
-        $total=Cart::getTotal();
+        $total=Cart::getTotalQuantity();
+        $contenido=Cart::getContent();
+        $data = array('name'=>"Jesicaa",'direccionEntrega'=> $res->direccion,'total'=>$total,'contenido'=>$contenido);
+        
+        $pdf=PDF::loadView('emails.mail',$data);
 
-        $data = array('name'=>"Jesicaa",'direccionEntrega'=> $res->direccion,'total'=>$total);
-         
-         Mail::send('emails.mail', $data, function($message){
+         Mail::send('emails.mail', $data, function($message) use ($pdf){
          $message->to('jessbc92@gmail.com', 'jesica')
-                 ->subject('Artisans Web Testing Mail');
+                 ->subject('Resumen de tu pedido en Womans Clothes');
          $message->from('tienda@gmail.com','Factura');
+         $message->attachData($pdf->output(),'Pedido.pdf');
          });
         $contenidoCarrito=Cart::getContent();
         //añadir productos a la tabla productos_pedidos
@@ -33,7 +37,7 @@ class PedidosControl extends Controller
        ///////// $pedido_id=Pedidos::select('id');
         //consultar producto_id
         $pedido_id=$pedido->id;
-
+        
         foreach($contenidoCarrito as $articulo){
             //busca el producto que tenga el nombre tal
             $producto_id=$articulo->id;
@@ -42,7 +46,7 @@ class PedidosControl extends Controller
             productosPedidos::create(['cantidad'=> $articulo->quantity,'precio'=>$articulo->price,'descuento'=>$articulo->attributes->descuento,'pedido_id'=>$pedido_id,'productos_id'=> $producto_id]);
         }
         Cart::clear();
-        return view('resumenPedido',["categorias" => $categorias]);
+        return view('resumenPedido',["categorias" => $categorias,'total'=>$total,'contenido'=>$contenido]);
     
 
     }

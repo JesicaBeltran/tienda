@@ -8,5 +8,5 @@ use DB;
 class Productos extends Model
 {
     protected $table = 'productos';
-
+    public $timestamps =false;
 }
