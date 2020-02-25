@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Cart;
 use App\User;
 use App\Categorias;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class usuarioControl extends Controller
 {
@@ -26,9 +27,12 @@ class usuarioControl extends Controller
         $categorias= Categorias::get();
         $total=Cart::getTotalQuantity();
 
-        $usuario = User::find($res->id)->update(['baja' => '1']);
+        $user = User::find(auth()->user()->id);
+        $user->delete();
         //acabar sesion
-        return redirect('/verPerfil');
+        //$account->delete();
+        //return redirect('/verPerfil');
+        return redirect('/home');
     }
     //sin usar aunn
     public function mostrarCambioContra(){
