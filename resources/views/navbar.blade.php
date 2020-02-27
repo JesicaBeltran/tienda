@@ -1,5 +1,5 @@
     <nav class="navbar navbar-expand-md navbar-light fixed-top">
-        <img id="logo" src="http://localhost/mi-proyecto-laravel/tienda/public/imagenes/logo.png" class="d-inline-block align-top" width="110" height="60">
+        <img id="logo" src="https://ieslamarisma.net/proyectos/2020/jesicabeltran/tienda/public/imagenes/logo.png" class="d-inline-block align-top" width="110" height="60">
     <a class="navbar-brand" style="font-size:20px;" href="{{url('/')}}">Inicio</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -22,9 +22,9 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
          
-          ({{$total}})  <a href="{{ url('/verCarrito') }}"><img id="logo" src="http://localhost/mi-proyecto-laravel/tienda/public/imagenes/carrito.png" class="d-inline-block align-top" width="25" height="25"></a>
+          ({{$total}})  <a href="{{ url('/verCarrito') }}"><img id="logo" src="https://ieslamarisma.net/proyectos/2020/jesicabeltran/tienda/public/imagenes/carrito.png" class="d-inline-block align-top" width="25" height="25"></a>
         @guest
-        <a href="{{ url('/home') }}"><img id="user" src="http://localhost/mi-proyecto-laravel/tienda/public/imagenes/usuario.png" class="d-inline-block align-top" width="25" height="25"/></a>
+        <a href="{{ url('/home') }}"><img id="user" src="https://ieslamarisma.net/proyectos/2020/jesicabeltran/tienda/public/imagenes/usuario.png" class="d-inline-block align-top" width="25" height="25"/></a>
         
         @else
         <li class="nav-item dropdown ">

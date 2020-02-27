@@ -28,13 +28,26 @@ class usuarioControl extends Controller
         $total=Cart::getTotalQuantity();
 
         $user = User::find(auth()->user()->id);
+        $user->update([
+            'baja'=>'1',
+            'email'=>$user->email."-".time(),
+            
+            ]);
+
         $user->delete();
         //acabar sesion
         //$account->delete();
         //return redirect('/verPerfil');
         return redirect('/home');
     }
-    //sin usar aunn
+    public function verAlta(){
+
+        $categorias= Categorias::get();
+        $total=Cart::getTotalQuantity();
+
+        return view('/formAlta');
+    }
+  
     public function mostrarCambioContra(){
 
         $categorias= Categorias::get();

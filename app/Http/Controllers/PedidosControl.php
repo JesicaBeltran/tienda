@@ -50,5 +50,31 @@ class PedidosControl extends Controller
     
 
     }
+    public function pedidosUsuario(){
+
+        $categorias= Categorias::get();
+        $total=Cart::getTotalQuantity();
+
+        $pedidos=Pedidos::where('users_id',auth()->user()->id)->get();
+        return view('verPedidoUsuario',["pedidos"=>$pedidos,"categorias" => $categorias,'total'=>$total]);
+    }
+
+    public function verpdf(Request $res){
+        $id_pedido=$res->id_pedido;
+        $pedido=productosPedidos::where ('pedido_id',$id_pedido)->get();
+        foreach($pedido as $ped)
+        $data = [
+            'cantidad'=> $ped['cantidad'],
+        ];
+        return PDF::loadView('factura',$data)
+        ->stream('facturaPedido.pdf');
+    }
+                                
+    public function cancelarPedido(Request $res){
+
+        
+
+
+    }
     
 }

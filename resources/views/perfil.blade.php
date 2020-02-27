@@ -11,7 +11,7 @@
     <p><strong>DNI:</strong> {{auth()->user()->dni}}</p>
     <p><strong>Dirección:</strong> {{auth()->user()->direccion}}</p><br>
     <form method="POST" action="{{url('/darBaja')}}">
-    <a href="" class="btn mt-2" style="background-color:#30475e;color:white;">Ver mis pedidos</a>
+    <a href="{{url('/verPedidos')}}" class="btn mt-2" style="background-color:#30475e;color:white;">Ver mis pedidos</a>
     <a href="{{url('/modificarForm')}}" class="btn mt-2 " style="background-color:#30475e;color:white;">Modificar mis datos</a>
     <a href="{{url('/cambioContras')}}" class="btn mt-2 " style="background-color:#ba6b57;color:white;">Cambiar contraseña</a>
     

@@ -37,3 +37,7 @@ Route::post('/modificarUsuario', 'usuarioControl@modificar');
 Route::post('/darBaja', 'usuarioControl@baja');
 Route::post('/cambiarC', 'usuarioControl@actualizarC');
 Route::get('/cambioContras', 'usuarioControl@mostrarCambioContra');
+
+Route::get('/verPedidos', 'PedidosControl@pedidosUsuario');
+Route::post('/verpdf', 'PedidosControl@verpdf')->name('verpdf');
+Route::post('/cancelarPedido', 'PedidosControl@cancelarPedido')->name('cancelarPedido');

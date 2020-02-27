@@ -22,7 +22,7 @@
 <body style="background-color:white;padding-top:5em;">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top">
-        <img id="logo" src="http://localhost/mi-proyecto-laravel/tienda/public/imagenes/logo.png" class="d-inline-block align-top" width="110" height="60">
+        <img id="logo" src="imagenes/logo.png" class="d-inline-block align-top" width="110" height="60">
                 <a style="font-size:20px;" class="navbar-brand" href="{{ url('/') }}">
                    Inicio
                 </a>

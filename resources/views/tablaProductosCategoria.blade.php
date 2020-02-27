@@ -13,12 +13,12 @@
 <h5 class="card-title" style="height:80px;">{{ $producto->nombre_producto }}</h5>
 <p class="card-text text-center">{{ $producto->precio }} €</p>
 
-<a href="{{ url ('/articulo/'.$producto->id) }}" class="btn mt-2 d-flex" style="background-color:#30475e; color:white;">&nbsp&nbsp&nbsp&nbspVer articulo</a>
+<a href="{{ url ('/articulo/'.$producto->id) }}" class="btn mt-2 d-flex" style="background-color:#30475e; color:white;">&nbsp&nbspVer articulo</a>
 </div>
 </div></div>
 
 @endforeach
-{{ $productos->links() }}
-</div>
 
+</div>
+{{ $productos->links() }}
 @endsection

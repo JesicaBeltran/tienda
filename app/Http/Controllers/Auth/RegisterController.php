@@ -55,10 +55,8 @@ class RegisterController extends Controller
             'dni' => ['required', 'string', 'max:9','min:9'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:4', 'confirmed'],
-
         ]);
     }
-
     /**
      * Create a new user instance after a valid registration.
      *
