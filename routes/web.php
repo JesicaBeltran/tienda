@@ -31,13 +31,26 @@ Route::post('/crearPedido', 'PedidosControl@crearPedido')->name('pedido.crear');
 Route::post('/enviarEmail', 'PedidosControl@enviarEmail')->name('email.enviar');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-Route::get('/verPerfil', 'perfilControl@verPerfil');
-Route::get('/modificarForm', 'usuarioControl@mostrarForm');
-Route::post('/modificarUsuario', 'usuarioControl@modificar');
-Route::post('/darBaja', 'usuarioControl@baja');
-Route::post('/cambiarC', 'usuarioControl@actualizarC');
-Route::get('/cambioContras', 'usuarioControl@mostrarCambioContra');
+Route::get('/verPerfil',['middleware'=>'auth','uses'=> 'perfilControl@verPerfil']);
+Route::get('/modificarForm',['middleware'=>'auth','uses'=> 'usuarioControl@mostrarForm']);
+Route::post('/modificarUsuario',['middleware'=>'auth','uses'=> 'usuarioControl@modificar']);
+Route::post('/darBaja',['middleware'=>'auth','uses'=> 'usuarioControl@baja']);
+Route::get('/verDarBaja',['middleware'=>'auth','uses'=> 'usuarioControl@verbaja']);
 
-Route::get('/verPedidos', 'PedidosControl@pedidosUsuario');
-Route::post('/verpdf', 'PedidosControl@verpdf')->name('verpdf');
-Route::post('/cancelarPedido', 'PedidosControl@cancelarPedido')->name('cancelarPedido');
+Route::post('/cambiarC',['middleware'=>'auth','uses'=> 'usuarioControl@actualizarC']);
+Route::get('/cambioContras',['middleware'=>'auth','uses'=> 'usuarioControl@mostrarCambioContra']);
+
+Route::get('/verPedidos',['middleware'=>'auth','uses'=> 'PedidosControl@pedidosUsuario']);
+Route::post('/verpdf',['middleware'=>'auth','uses'=> 'PedidosControl@verpdf'])->name('verpdf');
+Route::post('/cancelarPedido',['middleware'=>'auth','uses'=> 'PedidosControl@cancelarPedido'])->name('cancelarPedido');
+
+//Paypal
+Route::get('payment', array(
+	'as' => 'payment',
+	'uses' => 'PaypalController@postPayment',
+));
+ 
+Route::get('payment/status', array(
+	'as' => 'payment.status',
+	'uses' => 'PaypalController@getPaymentStatus',
+));

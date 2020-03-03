@@ -40,6 +40,11 @@ class usuarioControl extends Controller
         //return redirect('/verPerfil');
         return redirect('/home');
     }
+    public function verbaja(){
+        $categorias= Categorias::get();
+        $total=Cart::getTotalQuantity();
+        return view('bajaConf',["categorias" => $categorias,'total'=>$total]);
+    }
     public function verAlta(){
 
         $categorias= Categorias::get();
@@ -59,9 +64,10 @@ class usuarioControl extends Controller
     public function actualizarC(Request $res){
 
         $categorias= Categorias::get();
-        $total=Cart::getTotalQuantity();//comprobar que es 'secret'
+        $total=Cart::getTotalQuantity();
         $contra=bcrypt($res->nuevaContra);
         $usuario = User::find($res->id)->update(['password' => $contra]);
         return redirect('/verPerfil');
     }
+
 }

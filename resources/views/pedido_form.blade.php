@@ -2,9 +2,29 @@
 @section('content')
 
 <!-- Resumen del pedido -->
-<h3>Resumen del pedido</h3>
+<h3 style="text-align:center;color:#30475e">Resumen de su pedido</h3><br>
 <div class="row">
-<div class="col-lg-8">
+
+    
+<div class="col-3">
+    <div class="card" style="width: 18rem;">
+  <div class="card-header" style="background-color:#30475e;color:white;">
+  Acciones
+  </div>
+  <ul class="list-group list-group-flush">
+  <form method="POST" action="{{url('/darBaja')}}">
+<input type="hidden" name="_token" value="{{csrf_token()}}" />
+    <input type="hidden" value="{{auth()->user()->id}}" id="id" name="id" />
+    <li class="list-group-item"><a href="{{url('/verPedidos')}}" class="btn mt-2" style="background-color:white;color:#30475e;">Ver mis pedidos</a></li>
+    <li class="list-group-item"><a href="{{url('/modificarForm')}}" class="btn mt-2 " style="background-color:white;color:#30475e;">Modificar mis datos</a></li>
+    <li class="list-group-item"><a href="{{url('/cambioContras')}}" class="btn mt-2 " style="background-color:white;color:#30475e;">Cambiar contraseña</a></li>
+    <li class="list-group-item"><button type="submit" class="btn mt-2" style="background-color:white;color:#30475e;">Darme de baja</button></li>
+    </form> 
+    </ul>
+</div>
+</div>
+
+<div class="col-md-6">
 <table class="table text-center">
 <thead class="thead" style="background-color:#30475e; color:white;">
 <tr>
@@ -40,7 +60,7 @@
 @endforeach
 </table>
 </div>
-<div class="col-lg-3 mt-4">
+<div class="col-lg-3">
 <div class="card" style="width: 18rem;">
   <div class="card-header" style="background-color:#30475e;color:white;">
   Resumen final
@@ -52,7 +72,7 @@
 </div>
 
 <!-- hacer form -->
-
+<a href="{{ route('payment') }}"></a>
 <form method="POST" action="{{ url('/crearPedido') }}">
 
 <input type="hidden" name="_token" value="{{csrf_token()}}" />
@@ -68,6 +88,7 @@
 
   <button type="submit" class="btn" style="background-color:#f1935c; color:white;">Pagar</button>
 </form>
+
 
 <!-- pasar por post en el form los datos del pedido para agregarlo en la bd por un controlador-->
 

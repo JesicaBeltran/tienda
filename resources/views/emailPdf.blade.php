@@ -27,7 +27,7 @@
     <tr>
       <td>{{ $productos->name }}</td>
       <td>{{ $productos->quantity }}</td>
-      <td>{{ $productos->price }} €</td>
+      <td>{{ $productos->price }}</td>
     </tr>
     @endforeach
   </tbody>
@@ -35,6 +35,7 @@
 <div style="float:right;"><p>Total pagado: {{Cart::getTotal()}} €</p></div><br><br>
 <p>Enviado a: {{auth()->user()->name}}</p>
 <p>Direccion de envio: {{ $direccionEntrega }}</p>
+<p>Estado del pedido: @if($estado == 1) en proceso @elseif ($estado == 2) cancelado @endif</p>
 
 <h5>¡Gracias por confiar en nosotros!</h5>
 </div>

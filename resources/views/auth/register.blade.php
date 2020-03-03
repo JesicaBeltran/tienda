@@ -19,7 +19,7 @@
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>No debe estar vacío</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -32,7 +32,7 @@
 
                                 @error('apellidos')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>No debe estar vacío</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -45,7 +45,7 @@
 
                                 @error('direccion')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>No debe estar vacío</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -54,11 +54,11 @@
                             <label for="dni" class="col-md-4 col-form-label text-md-right">DNI</label>
 
                             <div class="col-md-6">
-                                <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" name="dni" required autocomplete="dni" autofocus>
+                                <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" name="dni" required autocomplete="dni" autofocus pattern="[0-9]{8}[A-Za-z]{1}">
 
                                 @error('dni')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>Debe contener 8 dígitos y una letra</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -72,7 +72,7 @@
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>Debe contener el carácter '@'</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -86,7 +86,7 @@
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>Debe tener un tamaño mínimo de 6 caracteres</strong>
                                     </span>
                                 @enderror
                             </div>

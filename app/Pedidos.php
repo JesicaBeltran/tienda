@@ -19,5 +19,6 @@ class Pedidos extends Model
         'dni',
         'users_id',
         'updated_at',
+        'pagar'
     ];
 }

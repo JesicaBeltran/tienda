@@ -1,7 +1,7 @@
 @extends('inicio')
 @section('content')
 
-<div class="row align-items-center" style="margin-top:40px;">
+<div class="row align-items-center offset-2" style="margin-top:40px;">
 
 @foreach($productos as $producto)
 

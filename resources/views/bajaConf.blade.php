@@ -1,6 +1,8 @@
 @extends('inicio')
 @section('content')
+
 <div class="row">
+    
 <div class="col-4">
     <div class="card" style="width: 18rem;">
   <div class="card-header" style="background-color:#30475e;color:white;">
@@ -16,18 +18,14 @@
     </ul>
 </div>
 </div>
-<div class="col-6">
+<div class="col-6" style="margin-top:50px;">
 <!-- tabla de los datos de pepito-->
-<img style="width: 100px;height:100px;" src="imagenes/user.png"/><label style="font-size:24px;margin-left:10px;"><strong>Hola {{auth()->user()->name}}!</strong></label>
-    <ul class="list-group list-group-flush">
-    <li class="list-group-item">Nombre: {{auth()->user()->name}}</li>
-    <li class="list-group-item">Apellidos: {{auth()->user()->apellidos}}</li>
-    <li class="list-group-item">DNI: {{auth()->user()->dni}}</li>
-    <li class="list-group-item">Dirección: {{auth()->user()->direccion}}</li>
-    </ul>
-</div>
+<form method="POST" action="{{url('/darBaja')}}">
+<input type="hidden" value="{{auth()->user()->id}}" id="id" name="id" />
+<h3>¿Está seguro de dar de baja su cuenta?</h3>
+<button type="submit" class="btn mt-2" style="margin-left:150px;background-color:white;color:#30475e;">Darme de baja</button>
+<a href="{{url('/verPerfil')}}" class="btn mt-2" style="background-color:white;color:red;">Cancelar</a>
+</form>
 <!-- acciones para pepito -->
 </div>
-
-
 @endsection

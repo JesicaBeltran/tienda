@@ -1,8 +1,8 @@
 @extends('inicio')
 @section('content')
 
-<div class="row">
-<div class="col-lg-8">
+<div class="row" style="margin-top:40px;">
+<div class="col-lg-8 offset-1">
 <table class="table text-center">
 <thead class="thead" style="background-color:#30475e; color:white;">
 <tr>
